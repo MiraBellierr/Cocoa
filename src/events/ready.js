@@ -1,3 +1,4 @@
+const { reloadMemberCount } = require("../handlers/memberCount");
 const { register } = require("../handlers/register");
 
 
@@ -10,4 +11,5 @@ module.exports = async client => {
 		register(client, guild.id);
 	});
 	
+	reloadMemberCount(client);
 };
