@@ -16,7 +16,7 @@ module.exports = {
 
 		w.find({ search: loc, degreeType: 'C', resCount: 1 }, function(err, result) {
 			if (err) {
-				interaction.reply(err);
+				interaction.reply({ content: 'I couldn\'t find this location information', ephemeral: true });
 				console.error(JSON.stringify(result, null, 2));
 			}
 			const area = result[0];

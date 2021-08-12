@@ -15,7 +15,7 @@ module.exports = {
 		const search = interaction.options.getString('video');
 
 		yts(search, async (err, res) => {
-			if (err) return interaction.reply('No videos found! ^-^');
+			if (err) return interaction.reply({ content: 'I couldn\'t find this video', ephemeral: true });
 			const pages = [];
 			for (let i = 0; i < res.videos.length; i++) {
 				const values = `Video ${i + 1}/${res.videos.length}\n${res.videos[i].url}`;

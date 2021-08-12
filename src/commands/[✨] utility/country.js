@@ -48,7 +48,7 @@ module.exports = {
 
 			interaction.editReply({ embeds: [embed] });
 		}).catch(err => {
-			interaction.editReply('I didn\'t found any information of that country.');
+			interaction.editReply('I couldn\'t find any information of this country.');
 			console.error(err);
 		});
 	},
