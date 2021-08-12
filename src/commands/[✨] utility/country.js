@@ -16,7 +16,6 @@ module.exports = {
 		let url = `https://restcountries.eu/rest/v2/name/${name}`;
 		if (name === 'usa' || name === 'united states') name = 'united states of america';
 		if (name === 'india') url = `https://restcountries.eu/rest/v2/name/${name}?fullText=true`;
-		await interaction.reply('*Please Wait...*');
 
 		fetch(url).then(res => res.json()).then(res => {
 			const data = res[0];
@@ -46,9 +45,9 @@ module.exports = {
 				.addField('Regional Blocs', regionalBlocs.join(',\n'))
 				.addField('Timezones', data.timezones.join(', '));
 
-			interaction.editReply({ embeds: [embed] });
+			interaction.reply({ embeds: [embed] });
 		}).catch(err => {
-			interaction.editReply('I couldn\'t find any information of this country.');
+			interaction.reply({ content: 'I couldn\'t find any information of this country.', ephemeral: true });
 			console.error(err);
 		});
 	},

@@ -22,8 +22,14 @@ module.exports = {
 				pages.push(values);
 			}
 
-			const paginated = new PaginateContent.DiscordJS(client, interaction, pages);
-			await paginated.init();
+			try {
+				const paginated = new PaginateContent.DiscordJS(client, interaction, pages);
+				await paginated.init();
+			}
+			catch(err) {
+				interaction.reply({ content: 'I couldn\'t find this video', ephemeral: true });
+				console.error(err);
+			}
 		});
 	},
 };
