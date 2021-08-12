@@ -21,7 +21,7 @@ module.exports = {
 	description: 'Returns all commands',
 	run: async (client, interaction) => {
 
-			return getAll(client, interaction);
+		return getAll(client, interaction);
 	},
 };
 

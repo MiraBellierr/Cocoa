@@ -4,7 +4,7 @@
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 
-// 	http://www.apache.org/licenses/LICENSE-2.0
+// http://www.apache.org/licenses/LICENSE-2.0
 
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
@@ -20,8 +20,8 @@ const table = new ascii('Commands');
 table.setHeading('Command', 'Load status');
 
 module.exports = (client) => {
-	readdirSync('./src/commands/').forEach(dir => {
-		const commands = readdirSync(`./src/commands/${dir}/`).filter(file => file.endsWith('.js'));
+	readdirSync('./src/commands/').forEach((dir) => {
+		const commands = readdirSync(`./src/commands/${dir}/`).filter((file) => file.endsWith('.js'));
 
 		for (const file of commands) {
 			const pull = require(`../commands/${dir}/${file}`);

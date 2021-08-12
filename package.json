@@ -13,9 +13,16 @@
   "dependencies": {
     "@discordjs/rest": "^0.1.0-canary.0",
     "ascii-table": "^0.0.9",
+    "colors": "^1.4.0",
     "common-tags": "^1.8.0",
     "discord.js": "^13.0.0",
     "dotenv": "^10.0.0",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.1",
+    "urban": "^0.3.2",
+    "weather-js2": "^2.0.2",
+    "yt-search": "^2.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0"
   }
 }
