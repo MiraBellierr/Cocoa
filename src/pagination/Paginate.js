@@ -79,7 +79,14 @@ function Paginate(client, interaction, pages, options = {
 					.setEmoji(this.emojis.forward),
 			]);
 
-		const message = await this.interaction.reply({ content: `${this.pages[page - 1]}`, components: [row], fetchReply: true });
+		let message;
+
+		if (typeof this.pages[page - 1] == 'object') {
+			message = await this.interaction.reply({ embeds: [this.pages[page - 1]], components: [row], fetchReply: true });
+		}
+		else {
+			message = await this.interaction.reply({ content: `${[this.pages[page - 1]]}`, components: [row], fetchReply: true });
+		}
 
 		const backwardFilter = (inter) => inter.customId === 'backward' && inter.user.id === this.interaction.user.id;
 		const stopFilter = (inter) => inter.customId === 'stop' && inter.user.id === this.interaction.user.id;
