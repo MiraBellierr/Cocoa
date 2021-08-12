@@ -17,6 +17,7 @@ function getAll(client, interaction) {
 		.setColor('RANDOM')
 		.setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
 		.setTimestamp()
+		.setFooter('https://github.com/MiraBellierr/Cocoa')
 		.setTitle(`${client.user.username} Help Command`);
 
 	const commands = (category) => {
@@ -29,5 +30,5 @@ function getAll(client, interaction) {
 		.map(cat => stripIndents`**${cat[0].toUpperCase() + cat.slice(1)}** \n${commands(cat)}`)
 		.reduce((string, category) => string + '\n' + category);
 
-	return interaction.reply({ embeds: [embed.setDescription(info).setTimestamp()] });
+	return interaction.reply({ embeds: [embed.setDescription(info)] });
 }
