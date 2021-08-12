@@ -129,20 +129,9 @@ function Paginate(client, interaction, pages, options = {
 			}
 		});
 
-		stop.on('collect', async (i) => {
+		stop.on('collect', async () => {
 
-			if (typeof this.pages[page - 1] == 'object') {
-				await i.update({
-					embeds: [this.pages[page - 1]],
-					components: [],
-				});
-			}
-			else {
-				await i.update({
-					content: this.pages[page - 1],
-					components: [],
-				});
-			}
+			await message.delete();
 
 			backward.stop('ENDED');
 			forward.stop('ENDED');
