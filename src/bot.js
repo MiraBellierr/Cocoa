@@ -1,5 +1,7 @@
 const { Client, Collection } = require('discord.js');
 const fs = require('fs');
+const mongoose = require('mongoose');
+
 
 const client = new Client({
 	allowedMentions: { parse: ['users'] },
@@ -30,5 +32,11 @@ client.categories = fs.readdirSync('./src/commands/');
 ['command', 'event'].forEach(handler => {
 	require(`./handlers/${handler}`)(client);
 });
+
+const connect = async () => await mongoose.connect('mongodb://localhost/cocoa', {
+	useNewUrlParser: true,
+	useUnifiedTopology: true,
+});
+connect();
 
 client.login(process.env.TOKEN);

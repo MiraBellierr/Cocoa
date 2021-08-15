@@ -1,5 +1,5 @@
-const { register } = require('../handlers/register');
+const { registerCommands } = require('../handlers/functions');
 
 module.exports = async (client, guild) => {
-	register(client, guild.id);
+	registerCommands(client, guild.id);
 };

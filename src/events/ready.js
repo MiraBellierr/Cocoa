@@ -1,5 +1,4 @@
-const { reloadMemberCount } = require('../handlers/memberCount');
-const { register } = require('../handlers/register');
+const { reloadMemberCount, registerCommands } = require('../handlers/functions');
 
 
 module.exports = async client => {
@@ -8,7 +7,7 @@ module.exports = async client => {
 	console.log(`Hi, ${client.user.username} is now online!`);
 
 	client.guilds.cache.forEach((guild) => {
-		register(client, guild.id);
+		registerCommands(client, guild.id);
 	});
 
 	reloadMemberCount(client);

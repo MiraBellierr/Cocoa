@@ -1,4 +1,4 @@
-const { reloadMemberCount } = require('../handlers/memberCount');
+const { reloadMemberCount } = require('../handlers/functions');
 
 module.exports = async (client, member) => {
 	if (member.guild.id !== '864537979339014184') return;
