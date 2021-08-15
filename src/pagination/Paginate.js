@@ -131,11 +131,11 @@ function Paginate(client, interaction, pages, options = {
 
 		stop.on('collect', async () => {
 
-			await message.delete();
-
 			backward.stop('ENDED');
 			forward.stop('ENDED');
 			stop.stop('ENDED');
+
+			await message.delete();
 		});
 
 		forward.on('collect', async (i) => {
@@ -162,11 +162,11 @@ function Paginate(client, interaction, pages, options = {
 		});
 
 		stop.on('end', (collected, reason) => {
-			if (reason != 'time' && reason != 'ENDED') throw new TypeError(reason);
+			if (reason != 'time' && reason != 'ENDED') throw new Error(reason);
 		});
 
 		forward.on('end', (collected, reason) => {
-			if (reason != 'time' && reason != 'ENDED') throw new TypeError(reason);
+			if (reason != 'time' && reason != 'ENDED') throw new Error(reason);
 		});
 
 		return {
