@@ -24,8 +24,6 @@ const client = new Client({
 	],
 });
 
-client.snipeMap = new Map();
-client.queue = new Map();
 client.commands = new Collection();
 client.categories = fs.readdirSync('./src/commands/');
 
