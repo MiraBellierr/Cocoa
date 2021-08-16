@@ -8,12 +8,16 @@ very hard to use and very unhuman
 const { PaginateContent } = require('../../Pagination');
 
 const pages = [embed1, embed2, embed3];
-
-const paginated = new PaginateContent.DiscordJS(client, interaction, pages, options = { time: 180000 }, emojis = {
+const options = {
+  time: 180000,
+};
+const emojis = {
   backward: '869052152331509781',
   stop: '869052152260214794',
   forward: '869052152012746783',
-})
+};
+
+const paginated = new PaginateContent.DiscordJS(client, interaction, pages, options, emojis);
 await paginated.init();
 ```
 
