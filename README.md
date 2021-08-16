@@ -72,8 +72,35 @@ gis(options, (err, res) => {
 ### Parameter
 #### options
 - searchTerm: `String`
+  - Term to be searched
 - queryStringAddition: `String`
+  - List
+    - Large images: **tbs=isz:l**
+    - Medium images: **tbs=isz:m**
+    - Icon sized images: **tba=isz:i**
+    - Image size larger than 400×300: **tbs=isz:lt,islt:qsvga**
+    - Image size larger than 640×480: **tbs=isz:lt,islt:vga**
+    - Image size larger than 800×600: **tbs=isz:lt,islt:svga**
+    - Image size larger than 1024×768: **tbs=isz:lt,islt:xga**
+    - Image size larger than 1600×1200: **tbs=isz:lt,islt:2mp**
+    - Image size larger than 2272×1704: **tbs=isz:lt,islt:4mp**
+    - Image sized exactly 1000×1000: **tbs=isz:ex,iszw:1000,iszh:1000**
+    - Images in full color: **tbs=ic:color**
+    - Images in transparent: **tbs=ic:trans**
+    - Images in black and white: **tbs=ic:gray**
+    - Images that are red: **tbs=ic:specific,isc:red** [orange, yellow, green, teal, blue, purple, pink, white, gray, black, brown]
+    - Image type Face: **tbs=itp:face**
+    - Image type Photo: **tbs=itp:photo**
+    - Image type Clipart: **tbs=itp:clipart**
+    - Image type Line drawing: **tbs=itp:lineart**
+    - Image type Animated (gif): **tbs=itp:animated**
+    - Group images by subject: **tbs=isg:to**
+    - Show image sizes in search results: **tbs=imgo:1**
+  - Example
+    - `'&tbm=isch&tbs=ic:color,isz:lt,islt:4mp,itp:face,isg:to'`
+
 - filterOutDomains: `Array<String>`
+  - Array of domains to be filtered
 #### callbacks
 ```js
 function callback(err, res) {
