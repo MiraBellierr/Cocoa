@@ -8,9 +8,11 @@ very hard to use and very unhuman
 const { PaginateContent } = require('../../Pagination');
 
 const pages = [embed1, embed2, embed3];
+
 const options = {
   time: 180000,
 };
+
 const emojis = {
   backward: '869052152331509781',
   stop: '869052152260214794',
