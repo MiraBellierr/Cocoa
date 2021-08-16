@@ -1,4 +1,4 @@
-const gis = require('g-i-s');
+const gis = require('../../handlers/imagescraping');
 const { PaginateContent } = require('../../Pagination');
 const { MessageEmbed } = require('discord.js');
 
@@ -15,7 +15,12 @@ module.exports = {
 	run: async (client, interaction) => {
 		const search = interaction.options.getString('search');
 
-		gis(search, async (err, res) => {
+		const options = {
+			searchTerm: search,
+			queryStringAddition: '&tbs=isz:l',
+		};
+
+		gis(options, async (err, res) => {
 			if (err) {
 				console.error(err);
 				return interaction.reply('An error occurred');
