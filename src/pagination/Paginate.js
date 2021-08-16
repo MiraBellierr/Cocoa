@@ -70,7 +70,7 @@ function Paginate(client, interaction, pages, options = {
 				new MessageButton()
 					.setCustomId('stop')
 					.setLabel('Stop')
-					.setStyle('PRIMARY')
+					.setStyle('DANGER')
 					.setEmoji(this.emojis.stop),
 				new MessageButton()
 					.setCustomId('forward')
