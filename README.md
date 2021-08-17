@@ -25,6 +25,20 @@ await paginated.init();
 ```
 ### Output
 ![](https://www.kannacoco.me/images/pagination.png)
+### Parameter
+#### client
+ - your bot client
+#### interaction
+ - interaction object
+#### pages
+ - array of embeds or messages
+#### options
+ - time: `Number`
+    - button interaction timeout
+#### emojis
+ - backward: `String`
+ - stop: `String`
+ - forward: `String`
 
 ## 2. Also including Google image search
 hard to use
