@@ -1,5 +1,5 @@
 module.exports = (client, message) => {
-	if (message.channel.id !== "1212255603058016317") {
+	if (message.channel.id === "1212255603058016317") {
 		const args = message.content.split(" ");
 		let id = "";
 
